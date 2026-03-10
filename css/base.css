@@ -141,6 +141,7 @@ nav {
   border: none;
   cursor: pointer;
   padding: 4px;
+  margin-left: 16px
 }
 
 #nav-toggle span {
@@ -159,6 +160,7 @@ nav {
   }
 
   #nav-links {
+    display: none;
     position: fixed;
     top: var(--nav-height);
     left: 0;
@@ -167,15 +169,11 @@ nav {
     flex-direction: column;
     gap: 0;
     padding: 12px 0 20px;
-    transform: translateY(-110%);
-    opacity: 0;
-    transition: transform 0.3s, opacity 0.3s;
     box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
   }
 
   #nav-links.open {
-    transform: translateY(0);
-    opacity: 1;
+    display: flex;
   }
 
   #nav-links li {
@@ -201,6 +199,7 @@ nav {
 
   #nav-toggle {
     display: flex;
+    margin-left: 16px;
   }
 
   #nav-toggle.open span:nth-child(1) {
