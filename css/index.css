@@ -82,11 +82,12 @@
 
 /* portfolio section */
 .portfolio {
-    padding: 2rem 2rem;
+    padding: 2rem 3rem;
 }
 
 .portfolio-header {
     display: flex;
+    margin-bottom: 2rem;
 }
 
 .header-left {
@@ -112,4 +113,109 @@
 
 .portfolio p {
     margin-bottom: 1rem;
+}
+
+.portfolio-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3, 250px);
+    grid-template-areas: 
+        "home-1 home-1 home-2"
+        "home-3 home-4 home-5"
+        "home-3 home-6 home-6";
+    gap: 2rem;
+}
+
+.portfolio-item {
+    height: 100%;
+}
+
+.portfolio-item:nth-child(1) {
+    grid-area: home-1;
+}
+.portfolio-item:nth-child(2) {
+    grid-area: home-2;
+}
+.portfolio-item:nth-child(3) {
+    grid-area: home-3;
+}
+.portfolio-item:nth-child(4) {
+    grid-area: home-4;
+}
+.portfolio-item:nth-child(5) {
+    grid-area: home-5;
+}
+.portfolio-item:nth-child(6) {
+    grid-area: home-6;
+}
+
+
+.portfolio-image-wrapper {
+    position: relative;
+    height: 100%;
+    border-radius: 24px;
+    overflow: hidden;
+}
+
+.portfolio-image-wrapper img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.portfolio-image-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 40%;
+    z-index: 1;
+    transition: background 0.3s ease;
+}
+
+.portfolio-tag {
+    position: absolute;
+    top: 16px;
+    left: 16px;
+    z-index: 2;
+    padding: 6px 14px;
+    border-radius: 999px;
+    background: var(--white);
+    color: var(--navy);
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+}
+
+.portfolio-caption {
+    position: absolute;
+    left: 24px;
+    bottom: 20px;
+    z-index: 2;
+    color: var(--white);
+    opacity: 0;
+    transform: translateY(10px);
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.portfolio-caption h3 {
+    font-family: var(--font-serif);
+    font-size: 1.1rem;
+    font-weight: 400;
+}
+
+.portfolio-image-wrapper:hover img {
+    transform: scale(1.02);
+    transition: transform 0.3s ease;
+}
+
+.portfolio-image-wrapper:hover .portfolio-caption {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.portfolio-image-wrapper:hover .portfolio-image-overlay {
+    background: linear-gradient(to top, rgba(27, 27, 27, 0.8), transparent);
 }
