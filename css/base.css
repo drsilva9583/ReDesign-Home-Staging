@@ -5,10 +5,18 @@
 
 /* root variables */
 :root {
-  --navy:       #1a1f5e;
-  --gold:       #c9922a;
-  --gold-hover: #e0aa48;
-  --white:      #ffffff;
+  --navy:         #1a1f5e;
+  --navy-blue:    #294187;
+  --dark-navy:    #12065C;
+  --darkest-navy: #0A0438;
+  --light-blue:   #5D567D;
+  --gold:         #C9953A;
+  --gold-hover:   #e0aa48;
+  --white:        #ffffff;
+  --bg-white:     #F7F6FC;
+  --gray:         #BFBFBF;
+  --dark-gray:    #6E6E6E;
+
   --nav-height: 68px;
   --font-serif: 'Libre Baskerville', Georgia, serif;
   --font-sans:  'DM Sans', sans-serif;
@@ -23,12 +31,24 @@
 
 body {
   font-family: var(--font-sans);
-  background: var(--white);
+  background: var(--bg-white);
 }
 
 a {
   text-decoration: none;
   color: inherit;
+}
+
+.italic {
+  font-style: italic;
+}
+
+.gold {
+  color: var(--gold);
+}
+
+.inline {
+  display: inline-block;
 }
 
 /* navbar */
@@ -50,7 +70,7 @@ nav {
 #brand {
   font-family: var(--font-serif);
   font-size: 1.20rem;
-  font-weight: 700;
+  /* font-weight: 700; */
   font-style: italic;
   color: var(--white);
   flex-shrink: 0;

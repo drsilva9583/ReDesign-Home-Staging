@@ -1,0 +1,115 @@
+/* index.css - styling for index.html */
+
+/* hero section */
+.hero {
+    position: relative;
+    min-height: calc(100vh - var(--nav-height));
+    overflow: hidden;
+}
+
+.hero-image {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 0;
+}
+
+.hero-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to right, rgba(0, 0, 0, 0.800), transparent);
+    z-index: 1;
+}
+
+/* text content above overlay */
+.hero-content {
+    position: relative;
+    z-index: 2;
+    color: var(--white);
+    display: flex;
+    flex-direction: column;
+    align-items: left;
+    justify-content: center;
+    text-align: left;
+    padding: 4rem 2rem;
+    gap: 1rem;
+    min-height: calc(100vh - var(--nav-height));
+}
+
+.hero-content h1 {
+    font-family: var(--font-serif);
+    font-size: 4rem;
+    font-weight: 400;
+}
+
+.hero-content p {
+    max-width: 400px;
+    font-size: 1.2rem;
+    color: var(--gray);
+}
+
+.hero-cta {
+    display: inline-block;
+    margin-top: 1.5rem;
+    margin-right: 1rem;
+    padding: 0.75rem 1.5rem;
+    border-radius: 999px;
+    background: var(--dark-navy);
+    color: var(--white);
+    font-weight: 600;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    font-size: 0.85rem;
+    transition: background 0.2s;
+}
+
+.hero-cta:hover {
+    background: var(--darkest-navy);
+}
+
+.hero-cta.secondary {
+    background: transparent;
+    box-shadow: inset 0 0 0 2px var(--white);
+    color: var(--white);
+}
+
+.hero-cta.secondary:hover {
+    background: var(--dark-gray);
+    color: var(--white);
+}
+
+/* portfolio section */
+.portfolio {
+    padding: 2rem 2rem;
+}
+
+.portfolio-header {
+    display: flex;
+}
+
+.header-left {
+    flex: 1;
+    max-width: 200px;
+}
+
+.header-right {
+    flex: 3;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--light-blue);
+    font-size: 1.2rem;
+}
+
+.portfolio h2 {
+    font-family: var(--font-serif);
+    color: var(--dark-navy);
+    font-size: 3rem;
+    font-weight: 400;
+}
+
+.portfolio p {
+    margin-bottom: 1rem;
+}
