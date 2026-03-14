@@ -7,7 +7,7 @@ Website for ReDesign Home Staging - CSEN 161 Web Development Final Project
 - You need a local server running to use the form. 
 - Without a server, navigating to the form and submitting will just show the raw PHP file as text.
 
-> Note: In submit.php `mail()` only sends real emails on a live server. When testing locally the redirect will still work but no email will actually be sent.
+> Note: In submit.php `mail()` will only send real emails on a live server (with a real email configured in submit.php). When running locally form submission will default to the confirmation page without any email sent. 
  
 # Running Locally
 After installing PHP, start the server from project root:
