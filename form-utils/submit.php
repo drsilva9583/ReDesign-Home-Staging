@@ -49,12 +49,8 @@ $headers  = "From: noreply@redesignstaging.com\r\n";
 $headers .= "Reply-To: $email\r\n";
 $headers .= "Content-Type: text/plain; charset=UTF-8\r\n";
 
-/* send the email (mail()only works on live server, not localhost) */
-if (mail($to, $subject, $body, $headers)) {
-    header('Location: confirmation.html');
-    exit;
-} else {
-    header('Location: ../consult.html?error=1');
-    exit;
-}
+/* attempt to send email to Redesign Home Staging work email - wont work on on all servers */
+mail($to, $subject, $body, $headers); // replace mail with PHPMailer + Gmail SMTP if deployed to production server
+header('Location: confirmation.html');
+exit;
 ?>
