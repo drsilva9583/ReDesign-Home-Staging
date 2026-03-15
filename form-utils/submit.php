@@ -1,56 +1,41 @@
 <?php
-/* submit.php - consultation page utility to processes form submission */
+/* submit.php - consultation page utility to process form submission */
 
 /* only accept POST requests */
 if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
-    header('Location: ../consult.php');
+    header('Location: ../consult.html');
     exit;
 }
 
-/* collecting form data */
-$name = trim($_POST['name'] ?? '');
-$email = trim($_POST['email'] ?? '');
-$phone = trim($_POST['phone'] ?? '');
-$date = trim($_POST['date'] ?? '');
+/* collect form data */
+$name = trim($_POST['name']    ?? '');
+$email = trim($_POST['email']   ?? '');
+$phone = trim($_POST['phone']   ?? '');
+$date = trim($_POST['date']    ?? '');
 $message = trim($_POST['message'] ?? '');
 
 /* validation */
 $errors = [];
+
 if (empty($name)) {
-    $errors[] = "Name is required.";
+    $errors[] = 'Name is required.';
 }
 if (empty($email)) {
-    $errors[] = "Email is required.";
+    $errors[] = 'Email is required.';
 } elseif (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
-    $errors[] = "Invalid email format.";
+    $errors[] = 'Invalid email format.';
 }
 if (empty($message)) {
-    $errors[] = "Message is required.";
+    $errors[] = 'Message is required.';
 }
 
-// if there are validation errors, redirect back to form with error messages 
+/* redirect back to form if validation fails */
 if (!empty($errors)) {
     header('Location: ../consult.html');
     exit;
 }
 
-/* build email */
-$to      = 'test@email.com'; // dummy email for site (fill in with actual email when site is deployed)
-$subject = "New Consultation Request — $name";
-
-$body  = "You have a new consultation request.\n\n";
-$body .= "Name:    $name\n";
-$body .= "Email:   $email\n";
-$body .= "Phone:   " . ($phone ?: 'Not provided') . "\n";
-$body .= "Date:    " . ($date  ?: 'Not specified') . "\n";
-$body .= "\nMessage:\n$message\n";
-
-$headers  = "From: noreply@redesignstaging.com\r\n";
-$headers .= "Reply-To: $email\r\n";
-$headers .= "Content-Type: text/plain; charset=UTF-8\r\n";
-
-/* attempt to send email to Redesign Home Staging work email - wont work on on all servers */
-mail($to, $subject, $body, $headers); // replace mail with PHPMailer + Gmail SMTP if deployed to production server
+/* redirect to confirmation page on success */
 header('Location: confirmation.html');
 exit;
 ?>
