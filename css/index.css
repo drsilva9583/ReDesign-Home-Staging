@@ -95,6 +95,11 @@
     max-width: 200px;
 }
 
+.header-left p {
+    font-size: 0.95rem;
+    letter-spacing: 0.12em;
+}
+
 .header-right {
     flex: 3;
     display: flex;
@@ -227,6 +232,11 @@
     padding: 4rem 2rem;
 }
 
+.transformation-label {
+    letter-spacing: 0.12em;
+    font-size: 0.95rem;
+}
+
 .transformation-inner {
     max-width: 1300px;
     margin: 0 auto;
@@ -311,6 +321,10 @@
     align-items: center;
     justify-content: center;
     touch-action: none;
+    user-select: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
 }
 
 .transformation-handle-icon {

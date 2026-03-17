@@ -13,8 +13,7 @@ footer {
 }
 
 .footer-cta-label {
-    font-size: 0.75rem;
-    font-weight: 600;
+    font-size: 0.95rem;
     letter-spacing: 0.12em;
     text-transform: uppercase;
     color: var(--gold);
@@ -31,6 +30,7 @@ footer {
 
 .footer-cta h2 em {
     font-style: italic;
+    font-weight: 400;
     color: var(--gold);
 }
 
@@ -55,11 +55,10 @@ footer {
     display: none;
 }
 
-/* divider line */
-.footer-divider {
-    height: 1px;
-    background: rgba(255, 255, 255, 0.1);
-    margin-bottom: 40px;
+.footer-lower {
+    background: var(--darkest-navy);
+    margin: 0 -40px -32px;
+    padding: 40px 40px 32px;
 }
 
 /* four column grid */
