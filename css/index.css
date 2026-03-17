@@ -56,7 +56,7 @@
     margin-right: 1rem;
     padding: 0.75rem 1.5rem;
     border-radius: 999px;
-    background: var(--dark-navy);
+    background: var(--gold);
     color: var(--white);
     font-weight: 600;
     letter-spacing: 0.05em;
@@ -66,7 +66,7 @@
 }
 
 .hero-cta:hover {
-    background: var(--darkest-navy);
+    background: var(--gold-hover);
 }
 
 .hero-cta.secondary {
@@ -218,4 +218,149 @@
 
 .portfolio-image-wrapper:hover .portfolio-image-overlay {
     background: linear-gradient(to top, rgba(27, 27, 27, 0.8), transparent);
+}
+
+/* transformation section */
+.transformation {
+    background: var(--darkest-navy);
+    color: var(--white);
+    padding: 4rem 2rem;
+}
+
+.transformation-inner {
+    max-width: 1300px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+    align-items: center;
+}
+
+/* Before/After Slider (left column) */
+.transformation-slider-wrapper {
+    width: 100%;
+}
+
+.transformation-slider {
+    position: relative;
+    width: 100%;
+    border-radius: 20px;
+    overflow: hidden;
+    aspect-ratio: 4 / 3;
+    background: var(--darkest-navy);
+}
+
+.transformation-img {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.transformation-after-wrapper {
+    position: absolute;
+    inset: 0;
+    overflow: hidden;
+    z-index: 2;
+}
+
+.transformation-after-wrapper .transformation-img-after {
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: calc(100% * 100 / var(--clip, 50));
+    object-fit: cover;
+    display: block;
+}
+
+/* Pills */
+.transformation-pill {
+    position: absolute;
+    top: 16px;
+    z-index: 3;
+    padding: 6px 14px;
+    border-radius: 999px;
+    background: var(--white);
+    color: var(--dark-navy);
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+}
+
+.transformation-pill-before { left: 16px; }
+.transformation-pill-after { right: 16px; }
+
+/* Handle on the divider */
+.transformation-handle {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    background: var(--white);
+    box-shadow: 0 2px 12px rgba(0,0,0,0.3);
+    z-index: 4;
+    cursor: ew-resize;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    touch-action: none;
+}
+
+.transformation-handle-icon {
+    font-size: 1.5rem;
+    color: var(--dark-navy);
+}
+
+/* Right column: title, headline, subtitle, facts */
+.transformation-content h2 {
+    font-family: var(--font-serif);
+    font-size: 2.25rem;
+    font-weight: 400;
+    margin: 0.5rem 0 1rem;
+}
+
+.transformation-subtitle {
+    color: var(--gray);
+    margin-bottom: 2rem;
+}
+
+.transformation-facts {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    border-top: 1px solid rgba(255,255,255,0.2);
+}
+
+.transformation-fact {
+    display: flex;
+    align-items: baseline;
+    gap: 1rem;
+    padding: 1rem 0;
+    border-bottom: 1px solid rgba(255,255,255,0.2);
+}
+
+.transformation-fact-value {
+    font-family: var(--font-serif);
+    font-size: 1.75rem;
+    font-weight: 700;
+    color: var(--gold);
+    flex-shrink: 0;
+}
+
+.transformation-fact-label {
+    color: var(--white);
+    font-size: 0.95rem;
+}
+
+@media (max-width: 1024px) {
+    .transformation-inner {
+      grid-template-columns: 1fr;
+    }
 }
