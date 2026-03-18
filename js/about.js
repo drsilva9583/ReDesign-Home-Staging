@@ -2,7 +2,7 @@
 
 document.addEventListener('DOMContentLoaded', () => {
 
-    const track   = document.querySelector('.carousel-track');
+    const track = document.querySelector('.carousel-track');
     const wrapper = document.querySelector('.carousel-track-wrapper');
     const prevBtn = document.querySelector('.carousel-btn.prev');
     const nextBtn = document.querySelector('.carousel-btn.next');
