@@ -9,10 +9,10 @@ document.addEventListener('DOMContentLoaded', () => {
 
     if (!track || !prevBtn || !nextBtn) return;
 
-    const cards      = Array.from(track.children);
-    const total      = cards.length;
-    const visible    = window.innerWidth <= 768 ? 1 : 3;
-    let current      = 0;   /* index of leftmost visible card */
+    const cards = Array.from(track.children);
+    const total = cards.length;
+    const visible = window.innerWidth <= 768 ? 1 : 3;
+    let current = 0;   /* index of leftmost visible card */
 
     /* get the width of one card */
     function cardWidth() {
