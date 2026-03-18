@@ -66,7 +66,7 @@ $team = [
 
         <!-- navbar -->
         <nav id="navbar">
-            <a href="index.html" id="brand">ReDesign Home Staging</a>
+            <a href="../index.html" id="brand">ReDesign Home Staging</a>
 
             <ul id="nav-links">
                 <li><a href="../services.html">Services</a></li>
@@ -132,7 +132,7 @@ $team = [
             <div class="footer-cta">
                 <p class="footer-cta-label">✦ Ready To Sell?</p>
                 <h2>Transform Your Home.<br><em>Maximize Your Sale.</em></h2>
-                <a href="consult.html" class="footer-cta-btn">Book A Consultation</a>
+                <a href="../consult.html" class="footer-cta-btn">Book A Consultation</a>
             </div>
 
             <div class="footer-lower">
@@ -144,17 +144,17 @@ $team = [
                     <div class="footer-col">
                         <h4>Services</h4>
                         <ul>
-                            <li><a href="services.html">Service 1</a></li>
-                            <li><a href="services.html">Service 2</a></li>
-                            <li><a href="services.html">Service 3</a></li>
+                            <li><a href="../services.html">Service 1</a></li>
+                            <li><a href="../services.html">Service 2</a></li>
+                            <li><a href="../services.html">Service 3</a></li>
                         </ul>
                     </div>
                     <div class="footer-col">
                         <h4>Company</h4>
                         <ul>
-                            <li><a href="index.html#portfolio">Portfolio</a></li>
-                            <li><a href="about.php">About Us</a></li>
-                            <li><a href="index.html#testimonials">Testimonials</a></li>
+                            <li><a href="../index.html#portfolio">Portfolio</a></li>
+                            <li><a href="../php/about.php">About Us</a></li>
+                            <li><a href="../index.html#testimonials">Testimonials</a></li>
                         </ul>
                     </div>
                     <div class="footer-col">
