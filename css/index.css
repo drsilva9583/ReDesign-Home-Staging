@@ -497,8 +497,106 @@
     color: var(--gray);
 }
 
-@media (max-width: 1024px) {
+@media (max-width: 768px) {
     .transformation-inner {
       grid-template-columns: 1fr;
+    }
+}
+
+/* mobile responsiveness */
+@media (max-width: 768px) {
+
+    /* reduce font sizes for smaller screens */
+    .hero-content h1 {
+        font-size: 2.5rem;
+    }
+
+    .hero-content p {
+        font-size: 1rem;
+    }
+
+    /* reduce padding and stack header vertically */
+    .portfolio {
+        padding: 2rem 1rem;
+    }
+
+    .portfolio-header {
+        flex-direction: column;
+        gap: 1rem;
+    }
+
+    .header-left {
+        max-width: 100%;
+    }
+
+    /* portfolio grid - single column stack on mobile */
+    .portfolio-grid {
+        grid-template-columns: 1fr;
+        grid-template-rows: auto;
+        grid-template-areas:
+            "home-1"
+            "home-2"
+            "home-3"
+            "home-4"
+            "home-5"
+            "home-6";
+        gap: 1rem;
+    }
+
+    /* fixed height for each portfolio item on mobile */
+    .portfolio-item {
+        height: 220px;
+    }
+
+    /* reduce padding */
+    .testimonials {
+        padding: 2rem 1rem;
+    }
+
+    /* single card view */
+    .testimonials-cards {
+        scroll-snap-type: x mandatory;
+    }
+
+    .testimonial-card {
+        flex: 0 0 100%;
+        scroll-snap-align: start;
+    }
+
+    /* center the nav arrows above the card */
+    .testimonials-header {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        gap: 1rem;
+    }
+
+    .testimonials-header-right {
+        justify-content: center;
+    }
+}
+
+/* tablet responsiveness (smaller screen layout) */
+@media (min-width: 769px) and (max-width: 1024px) {
+
+    /* portfolio grid - two column layout */
+    .portfolio-grid {
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: auto;
+        grid-template-areas:
+            "home-1 home-1"
+            "home-2 home-3"
+            "home-4 home-5"
+            "home-6 home-6";
+        gap: 1.5rem;
+    }
+
+    .portfolio-item {
+        height: 240px;
+    }
+
+    /* 2 testimonial cards at a time */
+    .testimonial-card {
+        flex: 0 0 calc((100% - 2rem) / 2);
     }
 }
