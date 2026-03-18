@@ -66,7 +66,7 @@ $team = [
 
         <!-- navbar -->
         <nav id="navbar">
-            <a href="../index.html" id="brand">ReDesign Home Staging</a>
+            <a href="index.php" id="brand">ReDesign Home Staging</a>
 
             <ul id="nav-links">
                 <li><a href="../services.html">Services</a></li>
@@ -152,9 +152,9 @@ $team = [
                     <div class="footer-col">
                         <h4>Company</h4>
                         <ul>
-                            <li><a href="../index.html#portfolio">Portfolio</a></li>
+                            <li><a href="index.php#portfolio">Portfolio</a></li>
                             <li><a href="../php/about.php">About Us</a></li>
-                            <li><a href="../index.html#testimonials">Testimonials</a></li>
+                            <li><a href="index.php#testimonials">Testimonials</a></li>
                         </ul>
                     </div>
                     <div class="footer-col">
