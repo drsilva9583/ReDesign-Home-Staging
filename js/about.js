@@ -9,27 +9,53 @@ document.addEventListener('DOMContentLoaded', () => {
 
     if (!track || !prevBtn || !nextBtn) return;
 
-    const cards = Array.from(track.children);
-    const total = cards.length;
-    const visible = window.innerWidth <= 768 ? 1 : 3;
-    let current = 0;   /* index of leftmost visible card */
+    const original = Array.from(track.children);
+    const total    = original.length;
+    const visible  = window.innerWidth <= 768 ? 1 : 3;
 
-    /* get the width of one card */
+    /* clone all cards and append so we always have cards to slide into */
+    original.forEach(card => {
+        track.appendChild(card.cloneNode(true));
+    });
+
+    let current = 0;
+
     function cardWidth() {
         return wrapper.offsetWidth / visible;
     }
 
-    /* move track to show cards starting at index */
-    function goTo(index) {
-        /* wrap around infinitely */
-        current = ((index % total) + total) % total;
+    function goTo(index, animate = true) {
+        if (!animate) track.style.transition = 'none';
+        else track.style.transition = 'transform 0.4s ease';
+
+        current = index;
         track.style.transform = `translateX(-${current * cardWidth()}px)`;
     }
 
-    prevBtn.addEventListener('click', () => goTo(current - 1));
-    nextBtn.addEventListener('click', () => goTo(current + 1));
+    nextBtn.addEventListener('click', () => {
+        current++;
+        goTo(current);
 
-    /* recalculate on resize */
-    window.addEventListener('resize', () => goTo(current));
+        /* when we reach the end of originals silently reset to the start */
+        if (current >= total) {
+            setTimeout(() => goTo(0, false), 400);
+        }
+    });
+
+    prevBtn.addEventListener('click', () => {
+        /* if at start, silently jump to cloned end then slide back */
+        if (current <= 0) {
+            goTo(total, false);
+            setTimeout(() => {
+                current = total - 1;
+                goTo(current);
+            }, 20);
+        } else {
+            current--;
+            goTo(current);
+        }
+    });
+
+    window.addEventListener('resize', () => goTo(current, false));
 
 });
