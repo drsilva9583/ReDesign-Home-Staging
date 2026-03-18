@@ -36,6 +36,6 @@ if (!empty($errors)) {
 }
 
 /* redirect to confirmation page on success */
-header('Location: confirmation.html');
+header('Location: ../form-utils/confirmation.html');
 exit;
 ?>

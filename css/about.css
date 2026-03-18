@@ -1,4 +1,4 @@
-/* about.css - styling for about.html */
+/* about.css - styling for about.php */
 
 /* page header */
 .about-header {
@@ -8,18 +8,10 @@
     border-bottom: 1px solid #e0e0ea;
 }
 
-#about-title {
-    text-align: center;
-    font-style: normal;
-    font-family: var(--font-serif);
-    font-size: 1rem;
-}
-
 .about-header h1 {
     font-family: var(--font-serif);
     font-size: 3.5rem;
     font-weight: 400;
-    font-style: italic;
     color: var(--dark-navy);
     margin-top: 0.5rem;
 }
@@ -48,15 +40,32 @@
     margin: 0.5rem 0 3rem;
 }
 
-.team-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 2.5rem;
-    max-width: 900px;
+/* carousel container — arrow + track + arrow */
+.team-carousel {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    max-width: 1000px;
     margin: 0 auto;
 }
 
+/* clips cards so only 3 show */
+.carousel-track-wrapper {
+    overflow: hidden;
+    flex: 1;
+}
+
+/* the sliding row of all cards */
+.carousel-track {
+    display: flex;
+    transition: transform 0.4s ease;
+}
+
+/* each card takes exactly 1/3 of the wrapper width */
 .team-member {
+    min-width: calc(100% / 3);
+    padding: 0 1rem;
+    box-sizing: border-box;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -98,29 +107,42 @@
     font-size: 0.88rem;
     line-height: 1.7;
     color: var(--light-blue);
-    max-width: 260px;
+    max-width: 220px;
+    text-align: center;
+}
+
+/* arrow buttons */
+.carousel-btn {
+    background: none;
+    border: 1.5px solid var(--navy);
+    color: var(--navy);
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    font-size: 1.1rem;
+    cursor: pointer;
+    flex-shrink: 0;
+    transition: background 0.2s, color 0.2s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.carousel-btn:hover {
+    background: var(--navy);
+    color: var(--white);
 }
 
 /* shared utility */
-.gold { color: var(--gold); }
+.gold   { color: var(--gold); }
 .italic { font-style: italic; }
 
-/* mobile */
+/* mobile — show 1 card at a time */
 @media (max-width: 768px) {
-    .about-header h1 {
-        font-size: 2.5rem;
-    }
+    .about-header h1 { font-size: 2.5rem; }
+    .about-team h2   { font-size: 2rem; }
 
-    .mission-content h2 {
-        font-size: 1.8rem;
-    }
-
-    .team-grid {
-        grid-template-columns: 1fr;
-        gap: 3rem;
-    }
-
-    .about-team h2 {
-        font-size: 2rem;
+    .team-member {
+        min-width: 100%;
     }
 }
