@@ -27,5 +27,5 @@ cd ReDesign-Home-Staging
 php -S localhost:8080
 ```
 
-Then open `http://localhost:8080`
+Then open `http://localhost:8080/php/index.php`
 
