@@ -201,6 +201,12 @@
     align-items: center;
 }
 
+.faq-section p {
+    font-family: var(--font-serif);
+    font-size: 1rem;
+    font-style: normal;
+}
+
 .faq-section h2 {
     font-family: var(--font-serif);
     font-size: 2.8rem;
