@@ -2,7 +2,7 @@
 
 document.addEventListener('DOMContentLoaded', () => {
 
-    const track = document.querySelector('.carousel-track');
+    const track   = document.querySelector('.carousel-track');
     const wrapper = document.querySelector('.carousel-track-wrapper');
     const prevBtn = document.querySelector('.carousel-btn.prev');
     const nextBtn = document.querySelector('.carousel-btn.next');
@@ -11,23 +11,33 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const original = Array.from(track.children);
     const total    = original.length;
-    const visible  = window.innerWidth <= 768 ? 1 : 3;
 
-    /* clone all cards and append so we always have cards to slide into */
+    /* clone all cards and append for infinite loop */
     original.forEach(card => {
         track.appendChild(card.cloneNode(true));
     });
 
     let current = 0;
 
+    /* recalculate visible on every call so resize is always correct */
+    function getVisible() {
+        return window.innerWidth <= 768 ? 1 : 3;
+    }
+
     function cardWidth() {
-        return wrapper.offsetWidth / visible;
+        return wrapper.offsetWidth / getVisible();
+    }
+
+    /* set all card widths based on current visible count */
+    function updateCardWidths() {
+        const width = cardWidth();
+        Array.from(track.children).forEach(card => {
+            card.style.minWidth = width + 'px';
+        });
     }
 
     function goTo(index, animate = true) {
-        if (!animate) track.style.transition = 'none';
-        else track.style.transition = 'transform 0.4s ease';
-
+        track.style.transition = animate ? 'transform 0.4s ease' : 'none';
         current = index;
         track.style.transform = `translateX(-${current * cardWidth()}px)`;
     }
@@ -36,14 +46,13 @@ document.addEventListener('DOMContentLoaded', () => {
         current++;
         goTo(current);
 
-        /* when we reach the end of originals silently reset to the start */
+        /* silently reset to start after animation */
         if (current >= total) {
             setTimeout(() => goTo(0, false), 400);
         }
     });
 
     prevBtn.addEventListener('click', () => {
-        /* if at start, silently jump to cloned end then slide back */
         if (current <= 0) {
             goTo(total, false);
             setTimeout(() => {
@@ -56,6 +65,14 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 
-    window.addEventListener('resize', () => goTo(current, false));
+    /* on resize recalculate card widths and reposition */
+    window.addEventListener('resize', () => {
+        updateCardWidths();
+        goTo(current, false);
+    });
+
+    /* init */
+    updateCardWidths();
+    goTo(0, false);
 
 });
