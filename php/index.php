@@ -252,9 +252,9 @@ $testimonials = $testimonialsStmt->fetchAll();
                     <div class="footer-col">
                         <h4>Services</h4>
                         <ul>
-                            <li><a href="../services.html">Service 1</a></li>
-                            <li><a href="../services.html">Service 2</a></li>
-                            <li><a href="../services.html">Service 3</a></li>
+                            <li><a href="../services.html#packages">Standard</a></li>
+                            <li><a href="../services.html#packages">Professional</a></li>
+                            <li><a href="../services.html#packages">Expert</a></li>
                         </ul>
                     </div>
                     <div class="footer-col">

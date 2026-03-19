@@ -111,7 +111,7 @@
     color: var(--white);
     padding: 0.25rem 0.5rem;
     border-radius: 24px;
-    z-index: 1000;
+    z-index: 2;
 }
 
 .popular-pill p {
@@ -292,9 +292,76 @@
     border: 1px solid rgba(110, 110, 110, 0.25);
 }
 
-@media (max-width: 900px) {
+@media (max-width: 1200px) {
+    .packages-section {
+        text-align: center;
+    }
+    .packages-section h2 {
+        font-size: 2.5rem;
+    }
+    .packages-section p {
+        font-size: 1rem;
+    }
+    .package-grid {
+        grid-template-columns: repeat(1, minmax(0, 1fr));
+    }
+    .package-card {
+        height: auto;
+    }
+    .package-list {
+        font-size: 0.875rem;
+    }
+    .package-note {
+        font-size: 0.75rem;
+    }
+    .package-labels {
+        grid-column: span 1;
+        justify-content: center;
+    }
+}
+
+@media (max-width: 1024px) {
+    .hero {
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        padding-top: 0;
+    }
+    .image-hero {
+        max-width: 100%;
+        height: auto;
+    }
+    .hero-content {
+        text-align: center;
+    }
+    .hero-content h1 { 
+        font-size: 2.5rem;
+    }
+    .hero-content p {
+        font-size: 1rem;
+    }
+    .services-header {
+        text-align: center;
+        padding: 2rem;
+    }
+    .services-header h1 {
+        font-size: 2.5rem;
+    }
+    .services-header p {
+        font-size: 1rem;
+    }
+    
     .comparison-table-wrapper {
       width: 100%;
       padding: 0 1rem;
+    }
+    .comparison-table thead th {
+        font-size: 1rem;
+    }
+    .comparison-table tbody th {
+        font-size: 0.875rem;
+    }
+    .comparison-table tbody td {
+        font-size: 0.875rem;
     }
   }
