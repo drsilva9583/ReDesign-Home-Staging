@@ -4,52 +4,36 @@
 /* team members array - add or remove members here */
 $team = [
     [
-        'name'  => 'Realtor 1',
-        'role'  => 'Role',
-        'bio'   => 'Enter bio here. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec',
+        'name'  => 'Ana Silva',
+        'role'  => 'Designer',
+        'bio'   => 'Talented designer with a passion for creating beautiful and functional spaces.',
         'photo' => '../images/placeholder-pfp.png',
-        'alt'   => 'Realtor 1'
+        'alt'   => 'Ana Silva'
     ],
     [
-        'name'  => 'Realtor 2',
-        'role'  => 'Role',
-        'bio'   => 'Enter bio here. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec',
+        'name'  => 'Elizabeth Lopez',
+        'role'  => 'Designer',
+        'bio'   => 'Experienced designer with a strong eye for detail and a passion for creating beautiful and functional spaces.',
         'photo' => '../images/placeholder-pfp.png',
-        'alt'   => 'Realtor 2'
+        'alt'   => 'Elizabeth Lopez'
     ],
     [
-        'name'  => 'Realtor 3',
-        'role'  => 'Role',
-        'bio'   => 'Enter bio here. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec',
+        'name'  => 'Pedro Silva',
+        'role'  => 'Realtor',
+        'bio'   => 'Experienced realtor with a passion for helping clients find their dream home.',
         'photo' => '../images/placeholder-pfp.png',
-        'alt'   => 'Realtor 3'
+        'alt'   => 'Pedro Silva'
     ],
     [
-        'name'  => 'Realtor 4',
-        'role'  => 'Role',
-        'bio'   => 'Enter bio here. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec',
+        'name'  => 'Adrian Lopez',
+        'role'  => 'Realtor',
+        'bio'   => 'Professional realtor with years of experience in the real estate industry.',
         'photo' => '../images/placeholder-pfp.png',
-        'alt'   => 'Realtor 4'
-    ],
-    [
-        'name'  => 'Realtor 5',
-        'role'  => 'Role',
-        'bio'   => 'Enter bio here. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec',
-        'photo' => '../images/placeholder-pfp.png',
-        'alt'   => 'Realtor 5'
-    ],
-    [
-        'name'  => 'Realtor 6',
-        'role'  => 'Role',
-        'bio'   => 'Enter bio here. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec',
-        'photo' => '../images/placeholder-pfp.png',
-        'alt'   => 'Realtor 6'
-    ],
+        'alt'   => 'Adrian Lopez'
+    ]
 ];
+
 ?>
-
-<!-- about.php - about page for ReDesign Home Staging website -->
-
 <!DOCTYPE html>
 
 <html lang="en">
@@ -89,8 +73,8 @@ $team = [
             <section class="about-header">
                 <p id="about-title"><span class="gold">✦ ABOUT US</span></p>
                 <h1>ReDesign Home Staging</h1>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque faucibus ex sapien vitae pellentesque sem placerat. In id cursus mi, ut vehicula felis. Sed accumsan ipsum ac diam dignissim eget laoreet erat.</p>
-                <p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam feugiat vitae ultricies eget tempor sit amet ante. Donec eu libero sit amet quam egestas semper aenean.</p>
+                <p>ReDesign Home Staging is a team of talented designers and realtors who are passionate about helping clients <span class="gold">sell their homes for the best price possible.</span></p>
+                <p>We provide <span class="gold">premium, modern staging</span> solutions tailored to today's fast-paced real estate market. We transform empty houses into styled, click-worthy homes that sell faster and for top dollar. Serving the <span class="gold">Bay Area</span> and <span class="gold">neighboring counties</span>, we blend current design trends with strategic furniture placement to help buyers visualize their future.</p>
             </section>
 
             <!-- meet the team -->
