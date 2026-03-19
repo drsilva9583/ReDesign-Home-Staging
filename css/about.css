@@ -1,4 +1,4 @@
-/* about.css - styling for about.php */
+/* about.css - styling for about page */
 
 /* page header */
 .about-header {
@@ -25,11 +25,20 @@
     font-style: italic;
 }
 
+#about-title {
+    font-style: normal;
+    font-family: var(--font-serif);
+    font-size: 1rem;
+}
+
 /* team section */
 .about-team {
     padding: 5rem 2rem;
     background: var(--off-white);
     text-align: center;
+    font-style: normal;
+    font-family: var(--font-serif);
+    font-size: 1rem;
 }
 
 .about-team h2 {
