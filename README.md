@@ -29,3 +29,6 @@ php -S localhost:8080
 
 Then open `http://localhost:8080/php/index.php`
 
+OR
+
+visit: https://ssl.students.engr.scu.edu/~ahmehta/csen161/ReDesign-Home-Staging/php/index.php
